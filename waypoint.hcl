@@ -1,27 +1,27 @@
 project = "sonarpolityczny"
-app "webapi" {
+
+app "webapp" {
+  path = "src"
   build {
-    use "docker" {
+    use "pack" {
+      
     }
     registry {
       use "docker" {
-        image = "sonarpolityczny"
-        tag   = "latest"
+        image = "nomad-nodejs-web"
+        tag   = "1"
+        local = true
       }
     }
   }
+
   deploy {
     use "nomad" {
-      //The following field was skipped during file generation
-      auth = ""
-      //The following field was skipped during file generation
-      consul_token = ""
-      //The following field was skipped during file generation
-      vault_token = ""
+      // these options both default to the values shown, but are left here to
+      // show they are configurable
+      datacenter = "dc1"
+      namespace  = "default"
     }
   }
-  release {
-    use "nomad-jobspec-canary" {
-    }
-  }
+
 }
