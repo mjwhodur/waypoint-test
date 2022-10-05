@@ -10,7 +10,7 @@ app "webapp" {
       use "docker" {
         image = "nomad-nodejs-web"
         tag   = "1"
-        local = true
+        locapipl = true
       }
     }
   }
@@ -19,7 +19,7 @@ app "webapp" {
     use "nomad" {
       // these options both default to the values shown, but are left here to
       // show they are configurable
-      datacenter = "dc1"
+      datacenter = "ph"
       namespace  = "default"
     }
   }
