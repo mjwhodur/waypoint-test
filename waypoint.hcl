@@ -38,6 +38,7 @@ build {
   registry {
     use "docker" {
       image = "app2"
+      tag = "1"
       local = true
     }
   }
