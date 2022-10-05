@@ -1,6 +1,6 @@
 project = "sonarpolityczny"
 
-app "webapp" {
+/* app "webapp" {
   path = "src"
   build {
     use "pack" {
@@ -23,5 +23,31 @@ app "webapp" {
       namespace  = "default"
     }
   }
+
+} */
+
+app "app2" {
+
+path = "app2"
+
+build {
+  use "docker" {
+
+  }
+
+  registry {
+    use "docker" {
+      image = "app2"
+      local = true
+    }
+  }
+}
+
+deploy {
+  use "nomad" {
+    datacenter = "ph"
+    namespace = "default"
+  }
+}
 
 }
