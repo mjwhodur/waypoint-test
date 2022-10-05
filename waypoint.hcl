@@ -10,7 +10,7 @@ app "webapp" {
       use "docker" {
         image = "nomad-nodejs-web"
         tag   = "1"
-        locapipl = true
+        local = true
       }
     }
   }
