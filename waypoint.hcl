@@ -31,17 +31,7 @@ app "app2" {
 path = "app2"
 
 build {
-  use "docker" {
-
-  }
-
-  registry {
-    use "docker" {
-      image = "app2"
-      tag = "1"
-      local = true
-    }
-  }
+  use "docker" {}
 }
 
 deploy {
@@ -49,6 +39,8 @@ deploy {
     datacenter = "ph"
     namespace = "default"
   }
+
+  use "kubernetes" {}
 }
 
 }
